@@ -1,7 +1,7 @@
 import requests
 import json
 import psycopg2
-
+import os
 
 
 r = requests.get('https://webapi.steemdata.com/Operations?where={"type": "transfer", "to": "steemvisit"}')
