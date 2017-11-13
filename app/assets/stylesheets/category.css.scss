@@ -1,0 +1,82 @@
+.categorywrapper{
+	width:100%;
+	margin:0 auto;
+  margin-top:100px;
+}
+
+.categorybox{
+	background-color: $blue;
+	box-shadow: 0 2px 1px rgba($black,0.1);
+	height: 155px;
+
+  width: 800px;
+  margin: 0 auto;
+	.categorytext{
+		color:#ffffff;
+		font-weight: 900;
+		font-size: 1.6rem;
+		text-transform: uppercase;
+	}
+	img{
+		width:728px;
+		height:90px;
+		display:block;
+		margin: 0 auto;
+	}
+}
+#post_category_id{
+	display:inline;
+}
+#new_post{
+	margin-top:50px;
+}
+
+/**** Banner styles ****/
+.togglewrapper{
+  width:800px;
+  margin: 0 auto;
+  margin-bottom:10px;
+
+}
+  .toggle-box {
+    display: none;
+  }
+
+  .toggle-box + label {
+    cursor: pointer;
+    color:#fff;
+    font-family: "Helvetica";
+    font-weight: 100;
+    font-size:1.75rem;
+    margin-bottom: 5px;
+  }
+
+  .toggle-box + label + div  {
+    display: none;
+    margin-bottom: 10px;
+  }
+
+  .toggle-box:checked + label + div  {
+    display: block;
+  }
+
+  .toggle-box + label:before {
+
+  }
+
+  .toggle-box:checked + label:before  {
+  }toggle:checked ~ span::before {
+  content: "-";
+}
+
+.usead{
+    font-family: "Helvetica";
+    font-size: 1.75rem;
+    background-color: #0E62A8;
+}
+.usead:hover {
+    background-color: #0E62A8;
+}
+.current-steem{
+  font-size:20px;
+}

@@ -1,0 +1,9 @@
+= simple_form_for @post, html:{multipart: true}, :url => new_category_post_path() do |f|
+	=f.error_notification
+	=f.collection_select :category_id, Category.order(:title),:id,:title, include_blank: true
+	=f.input :title
+	%br
+	=f.input :link
+	=f.file_field :image
+	%p Notice: you can only add steemit.com post URL's
+	=f.button :submit, "Create AD"

@@ -1,0 +1,49 @@
+<div class="categorywrapper">
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <div style="color:red;"><%= f.error_notification %></div>
+
+  <div class="form-inputs">
+    <p>
+    <label class="string optional active">Your current amount of STEEM : <%= current_user.steem %></label>
+    
+    <%= link_to 'Generate', transaction_new_path, :class=>"btn tooltipped blue", "data-position" => "top", "data-delay" => "50", "data-tooltip" => "Click generate, then send any amount of SBD to @steemvisit using the memo-code below" %>
+    <%
+    current_user.transactions.all.each do |trans|
+      if trans.user_id == current_user.id
+        @trans = trans.name
+      end
+    end
+    %>
+    </p>
+    </br>
+    <label>Your memo-code: <%= @trans %> </label>
+    <%= f.input :name %>
+    <%= f.input :email %>
+
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+    <% end %>
+
+    <%= f.input :password, required: false, :maxlength => 30 %>
+    Leave it blank if you don't want to change it
+    <p></p>
+    <%= f.input :password_confirmation, required: false %>
+    <%= f.input :current_password %>
+    we need your current password to confirm your changes
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Update", :class => "btn blue" %>
+  </div>
+<% end %>
+
+
+<!--
+<h3>Cancel my account</h3>
+
+<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+
+<%= link_to "Back", :back %>
+
+--> 

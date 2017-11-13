@@ -1,0 +1,133 @@
+/*
+*= require material_icons
+*/
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_self
+ */
+/*
+*@import "bootstrap-sprockets";
+*@import "bootstrap";
+*/
+@import "materialize";
+
+/*
+ *= require_self
+ */
+
+/***** General styling ****/
+body {
+	font-family: "Helvetica";
+	font-weight: 100;
+
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 100;
+	color:#000!important;
+}
+
+.wrapper {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.clearfix:before, .clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+/***** form styling ****/
+.error{
+	margin-left:5px;
+	color:red;
+}
+.simple_form{
+	margin: 0 auto;
+	width:600px;
+	color:#ffffff;
+	input[type="password"],input[type="text"],input[type="email"],input[type="number"]{
+
+  		background-color : #9ecbed; 
+
+	}
+	select[name="post[category_id]"]{
+		color:#000;
+	}
+
+	label{
+		font-size:25px;
+		margin-right:5px;
+		color:#ffffff;
+	}
+}
+
+
+/***** menu styling ****/
+
+.menubutton, .dropdown-button{
+
+  padding: 5px 20px;
+  color:#1A5099;
+  text-decoration: none;
+  font-size: 1.45em;
+  margin: 0 15px;
+}
+
+/* Hover state animation applied here */
+.menubutton:hover { 
+  -webkit-animation: hover 1200ms linear 2 alternate;
+    animation: hover 1200ms linear 2 alternate;
+    color: #fff;
+    text-decoration: none;
+
+}
+
+/* Active state animation applied here */
+.menubutton:active {
+  -webkit-animation: active 1200ms ease 1 alternate;
+  animation: active 1200ms ease 1 alternate; 
+  background: #5F9BE0;
+}
+
+header {
+	width: 100%;
+	.logo {
+		float: left;
+		font-size: 24px;
+		a {
+			text-decoration: none;
+			font-weight:bold;
+
+		}
+	}
+	nav {
+		float: right;
+		a {
+			margin-left: 1.5rem;
+			line-height: 2.4;
+			color:#126AC1!important;
+		}
+	}
+}
+
+@import 'home.css.scss';
+@import 'post.css.scss';
+@import 'categories.css.scss';
+@import 'category.css.scss';
+@import 'statistics.scss';

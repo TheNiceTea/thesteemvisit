@@ -1,0 +1,2 @@
+steem==0.18.103
+psycopg2

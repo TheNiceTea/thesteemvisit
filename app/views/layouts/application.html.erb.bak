@@ -1,0 +1,16 @@
+  <%= csrf_meta_tags %>
+     <%= stylesheet_link_tag "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+ <nav>
+    <div class="nav-wrapper">
+    <%= link_to "SteemVisit", root_path, class: "brand-logo" %>
+      <a href="#" class="brand-logo"><i class="material-icons">mouse</i>SteemVisit</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="sass.html"><i class="material-icons">search</i></a></li>
+        <li><a href="badges.html"><i class="material-icons">view_module</i></a></li>
+        <li><a href="collapsible.html"><i class="material-icons">refresh</i></a></li>
+        <li><a href="mobile.html"><i class="material-icons">more_vert</i></a></li>
+      </ul>
+    </div>
+  </nav>

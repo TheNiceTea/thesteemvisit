@@ -1,0 +1,6 @@
+.container
+	%h2{ :style => "text-align:center;"}
+		= @statistic.id
+	= pie_chart({"Football" => 10, "Basketball" => 5})
+	= line_chart({20.day.ago => 5, 1368174456 => 4, "2013-05-07 00:00:00 UTC" => 7})
+= "#{@post.impressionist_count} views so far!"

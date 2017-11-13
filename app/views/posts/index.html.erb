@@ -1,0 +1,18 @@
+<div class="categorywrapper">
+  <% @posts.each do |post| %>
+    <div class="categorybox">
+      <a href="<%= category_path('special_occasions') %>">
+        <div class="categorytext">
+          <%= post.title %>
+        </div>
+        <%= image_tag post.image, :class => "categorybox img" %>
+      </a>
+    </div>
+    <div class="togglewrapper">
+      <p></p>
+      <%= link_to "Delete Ad",post_path(post.id), method: :delete, :class => "waves-effect waves-light btn usead" %>
+      <%= link_to "Add STEEM",post_path(post.id), :class => "waves-effect waves-light btn usead" %>
+      <span class="current-steem">Available STEEM: <%= post.steem %>&nbsp;Payout: <%= post.payout %></span>
+    </div>
+  <% end %>
+</div>

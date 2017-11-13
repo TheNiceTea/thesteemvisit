@@ -1,0 +1,44 @@
+!!!
+%html
+%head
+  %title SteemVisit
+  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+  = javascript_include_tag "https://www.gstatic.com/charts/loader.js"
+  = javascript_include_tag 'application', 'data-turbolinks-track' => true
+  %link{:rel => "stylesheet", :href => "http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css"}
+  %link{:rel => "stylesheet", :href => "http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"}
+  = csrf_meta_tags
+%body
+  %header
+    .wrapper.clearfix
+    %ul#dropdown1.dropdown-content
+      %li
+        %a{:href => edit_user_registration_path} Your profile
+      %li
+        %a{:href => posts_path} Your ads
+      %li.divider
+      %li
+        %a{:href => "/statistics"} Statistics
+    %nav{:style => "background-color:#ffffff;"}
+      %div.brand-logo
+      =link_to "SteemVisit", root_path, class: "logo"
+      %ul.right.hide-on-med-and-down
+        %li
+          = link_to "Create Ad", new_category_post_path(1), class: "menubutton"
+        - if user_signed_in?
+          %li
+            = link_to "Your Profile", edit_user_registration_path, class: "menubutton"
+          %li
+            = link_to "Sign out", destroy_user_session_path, :method => :delete, class: "menubutton"
+          %li
+            %a.dropdown-button{"data-activates" => "dropdown1"}
+              Profile
+              %i.material-icons.right arrow_drop_down
+        - else
+          %li
+            = link_to "Sign in", new_user_session_path, class: "menubutton"
+          %li
+            = link_to "Sign Up", new_user_registration_path, class: "menubutton"
+
+  .wrapper
+    = yield

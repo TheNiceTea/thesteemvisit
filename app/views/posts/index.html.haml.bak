@@ -1,0 +1,12 @@
+.categorywrapper
+	- @posts.each do |post|
+		.categorybox
+			%a{ :href => category_path('special_occasions')}
+				.categorytext	
+					= post.title
+				=image_tag post.image, :class => "categorybox img"
+		.togglewrapper
+			%p
+			=link_to "Delete Ad",post_path(post.id), method: :delete, :class => "waves-effect waves-light btn usead"
+			=link_to "Add STEEM",post_path(post.id), :class => "waves-effect waves-light btn usead"
+			%span{:class => "current-steem"} Added STEEM: 0
