@@ -1,0 +1,44 @@
+<div class="categorywrapper">
+  <% @posts.each_with_index do |post, index| %>
+    <div class="categorybox">
+      <a href="<%= category_path('special_occasions') %>">
+        <div class="categorytext">
+          <%= post.title %>
+        </div>
+        <%= image_tag post.image %>
+      </a>
+    </div>
+    <% if user_signed_in? %>
+      <div class="togglewrapper">
+        <p></p>
+        <% if current_user.liked? post %>
+          <%= link_to unuse_post_path(post),:class => "btn waves-effect waves-light usead", method: :put do %>
+            Unuse
+          <% end %>
+          <input class="toggle-box" id="identifier-<%= index %>" type="checkbox"></input>
+          <label for="identifier-<%= index %>">Embed Code!</label>
+          <div>
+            <br/>
+            <code id="bar<%= index %>">[![Foo](#{root_url.chomp('/')}#{post.image})](#{root_url}post/#{post.id}/#{current_user.name})</code>
+            <p></p>
+            <button class="clipboard-btn" data-clipboard-action="copy" data-clipboard-target="#bar<%= index %>">
+              Copy to clipboard
+            </button>
+          </div>
+        <% else %>
+          <%= link_to use_post_path(post),:class => "btn waves-effect waves-light usead", method: :put do %>
+            Use
+            <!--
+              To display upvotes count
+              \#{post.get_upvotes.size}
+            -->
+          <% end %>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="togglewrapper">
+        You need to be signed in, to see this area.
+      </div>
+    <% end %>
+  <% end %>
+</div>

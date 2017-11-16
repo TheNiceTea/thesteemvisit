@@ -1,0 +1,14 @@
+<p id="notice">
+  <%= notice %>
+</p>
+<div class="categorywrapper">
+  <h1>Statistics</h1>
+  <div class="statistics container">
+    <% @posts.each do |post| %>
+      <%= image_tag post.image, :class => "categorybox img" %>
+      &nbsp;
+      <%= link_to post.title,post_path(post.id), :class => "waves-effect waves-light btn blue statistic-button" %>
+      <p></p>
+    <% end %>
+  </div>
+</div>

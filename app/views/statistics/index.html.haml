@@ -1,7 +1,0 @@
-%p#notice= notice
-%h1 Statistics
-.container{:class => "statistics"}
-	- @posts.each do |post|
-		= image_tag post.image, :class => "categorybox img"
-		=link_to post.title,post_path(post.id), :class => "waves-effect waves-light btn blue statistic-button"
-		%p
