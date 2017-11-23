@@ -20,7 +20,7 @@
           <div>
             <br/>
             <code id="bar<%= index %>">
-              [![Foo](<%= root_url.chomp('/') + post.image.url + ")]("+root_url+"post/"post.id.to_s+"/"+current_user.name+")" %>
+              [![Foo](<%= root_url.chomp('/') + post.image.url + ")]("+root_url+"post/"+post.id.to_s+"/"+current_user.name+")" %>
             </code>
             <p></p>
             <button class="clipboard-btn" data-clipboard-action="copy" data-clipboard-target="#bar<%= index %>">
