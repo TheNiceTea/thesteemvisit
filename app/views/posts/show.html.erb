@@ -2,15 +2,12 @@
   <h2 style="text-align:center;">
     <%= @post.title %>
   </h2>
-  <%= pie_chart Statistic.group(:ref).where(:post_id =>@post.id).count %>
+  <%= pie_chart @post.impressions.group(:referrer).count %>
 </div>
 <h5 style="text-align:center;">
 <%= "#{@post.impressionist_count} views and" %>
 <%= "#{@post.impressionist_count(:filter=>:ip_address)} unique views so far!" %>
 </h5>
-<% @post.impressions.each do |impression| %>
-  <%= "#{impression.referrer}" %>
-<% end %>
 <%= simple_form_for @post do |f| %>
 <div style="color:red;"><%= f.error_notification %></div>
   <%= f.input :steem %>
