@@ -96,7 +96,6 @@ class PostsController < ApplicationController
 
 	def redirect
 		@post = Post.find(params[:id])
-		sleep 1.5
 		redirect_to @post.link
 	end
 

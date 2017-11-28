@@ -11,7 +11,7 @@ class CreateImpressionsTable < ActiveRecord::Migration
       t.string :ip_address
       t.string :session_hash
       t.string :message
-      t.string :referrer
+      t.string :referrer, :default => 'direct'
       t.text :params
       t.timestamps
     end
